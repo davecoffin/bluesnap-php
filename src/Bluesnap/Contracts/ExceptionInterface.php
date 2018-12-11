@@ -1,6 +1,6 @@
 <?php
 
-namespace tdanielcox\Bluesnap\Contracts;
+namespace davecoffin\Bluesnap\Contracts;
 
 interface ExceptionInterface
 {

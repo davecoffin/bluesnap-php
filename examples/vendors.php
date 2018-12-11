@@ -9,17 +9,17 @@ class VendorController
     public function __construct()
     {
         $environment = 'sandbox'; // or 'production'
-        \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
+        \davecoffin\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
     }
 
     /**
      * Create a Vendor
      *
-     * @return \tdanielcox\Bluesnap\Models\Vendor
+     * @return \davecoffin\Bluesnap\Models\Vendor
      */
     public function createVendor()
     {
-        $response = \tdanielcox\Bluesnap\Vendor::create([
+        $response = \davecoffin\Bluesnap\Vendor::create([
             'email' => 'vendoremail@example.com',
             'country' => 'US'
         ]);
@@ -39,11 +39,11 @@ class VendorController
      * Get a Vendor
      *
      * @param int $vendor_id
-     * @return \tdanielcox\Bluesnap\Models\Vendor
+     * @return \davecoffin\Bluesnap\Models\Vendor
      */
     public function getVendor($vendor_id)
     {
-        $response = \tdanielcox\Bluesnap\Vendor::get($vendor_id);
+        $response = \davecoffin\Bluesnap\Vendor::get($vendor_id);
 
         if ($response->failed()) {
             $error = $response->data;
@@ -59,11 +59,11 @@ class VendorController
     /**
      * Get All Vendors
      *
-     * @return \tdanielcox\Bluesnap\Models\Vendor[]
+     * @return \davecoffin\Bluesnap\Models\Vendor[]
      */
     public function getAllVendors()
     {
-        $response = \tdanielcox\Bluesnap\Vendor::get();
+        $response = \davecoffin\Bluesnap\Vendor::get();
 
         $vendors = $response->data;
 

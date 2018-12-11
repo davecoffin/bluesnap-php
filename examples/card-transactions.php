@@ -9,18 +9,18 @@ class CardTransactionController
     public function __construct()
     {
         $environment = 'sandbox'; // or 'production'
-        \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
+        \davecoffin\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
     }
 
 
     /**
      * Create a New Transaction (simple)
      *
-     * @return \tdanielcox\Bluesnap\Models\CardTransaction
+     * @return \davecoffin\Bluesnap\Models\CardTransaction
      */
     public function createTransaction()
     {
-        $response = \tdanielcox\Bluesnap\CardTransaction::create([
+        $response = \davecoffin\Bluesnap\CardTransaction::create([
             'creditCard' => [
                 'cardNumber' => '4263982640269299',
                 'expirationMonth' => '02',
@@ -50,11 +50,11 @@ class CardTransactionController
      *
      * @param int $vaulted_shopper_id
      * @param int $vendor_id
-     * @return \tdanielcox\Bluesnap\Models\CardTransaction
+     * @return \davecoffin\Bluesnap\Models\CardTransaction
      */
     public function authorizeTransaction($vaulted_shopper_id, $vendor_id)
     {
-        $response = \tdanielcox\Bluesnap\CardTransaction::create([
+        $response = \davecoffin\Bluesnap\CardTransaction::create([
             'vendorInfo' => [
                 'vendorId' => $vendor_id,
                 'commissionAmount' => 4.00,
@@ -88,11 +88,11 @@ class CardTransactionController
      * Capture a previously authorized transaction
      *
      * @param int $transaction_id
-     * @return \tdanielcox\Bluesnap\Models\CardTransaction
+     * @return \davecoffin\Bluesnap\Models\CardTransaction
      */
     public function captureTransaction($transaction_id)
     {
-        $response = \tdanielcox\Bluesnap\CardTransaction::update($transaction_id, [
+        $response = \davecoffin\Bluesnap\CardTransaction::update($transaction_id, [
             'transactionId' => $transaction_id,
             'cardTransactionType' => 'CAPTURE',
         ]);
@@ -113,11 +113,11 @@ class CardTransactionController
      * Get a Transaction
      *
      * @param int $transaction_id
-     * @return \tdanielcox\Bluesnap\Models\CardTransaction
+     * @return \davecoffin\Bluesnap\Models\CardTransaction
      */
     public function getTransaction($transaction_id)
     {
-        $response = \tdanielcox\Bluesnap\CardTransaction::get($transaction_id);
+        $response = \davecoffin\Bluesnap\CardTransaction::get($transaction_id);
 
         if ($response->failed())
         {
@@ -134,11 +134,11 @@ class CardTransactionController
     /**
      * Get All Transactions
      *
-     * @return \tdanielcox\Bluesnap\Models\CardTransaction[]
+     * @return \davecoffin\Bluesnap\Models\CardTransaction[]
      */
     public function getAllTransactions()
     {
-        $response = \tdanielcox\Bluesnap\CardTransaction::get();
+        $response = \davecoffin\Bluesnap\CardTransaction::get();
 
         $transactions = $response->data;
 
@@ -149,12 +149,12 @@ class CardTransactionController
      * Refund a Transaction
      *
      * @param int $transaction_id
-     * @return \tdanielcox\Bluesnap\Models\Refund
+     * @return \davecoffin\Bluesnap\Models\Refund
      */
     public function refundTransaction($transaction_id)
     {
         // Pass query parameters as array
-        $response = \tdanielcox\Bluesnap\Refund::update($transaction_id, [
+        $response = \davecoffin\Bluesnap\Refund::update($transaction_id, [
             'amount' => 10.00,
             'reason' => 'Your refund description'
         ]);

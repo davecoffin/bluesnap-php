@@ -9,17 +9,17 @@ class VaultedShopperController
     public function __construct()
     {
         $environment = 'sandbox'; // or 'production'
-        \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
+        \davecoffin\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
     }
 
     /**
      * Create a VaultedShopper
      *
-     * @return \tdanielcox\Bluesnap\Models\VaultedShopper
+     * @return \davecoffin\Bluesnap\Models\VaultedShopper
      */
     public function createVaultedShopper()
     {
-        $response = \tdanielcox\Bluesnap\VaultedShopper::create([
+        $response = \davecoffin\Bluesnap\VaultedShopper::create([
             'firstName' => 'John',
             'lastName' => 'Smith',
         ]);
@@ -40,11 +40,11 @@ class VaultedShopperController
      * Get a VaultedShopper
      *
      * @param int $vaulted_shopper_id
-     * @return \tdanielcox\Bluesnap\Models\VaultedShopper
+     * @return \davecoffin\Bluesnap\Models\VaultedShopper
      */
     public function getVaultedShopper($vaulted_shopper_id)
     {
-        $response = \tdanielcox\Bluesnap\VaultedShopper::get($vaulted_shopper_id);
+        $response = \davecoffin\Bluesnap\VaultedShopper::get($vaulted_shopper_id);
 
         if ($response->failed()) {
             $error = $response->data;
@@ -60,11 +60,11 @@ class VaultedShopperController
     /**
      * Get all VaultedShoppers
      *
-     * @return \tdanielcox\Bluesnap\Models\VaultedShopper[]
+     * @return \davecoffin\Bluesnap\Models\VaultedShopper[]
      */
     public function getAllVaultedShoppers()
     {
-        $response = \tdanielcox\Bluesnap\VaultedShopper::get();
+        $response = \davecoffin\Bluesnap\VaultedShopper::get();
 
         $vaulted_shoppers = $response->data;
 
@@ -75,7 +75,7 @@ class VaultedShopperController
      * Add a New Card to a VaultedShopper
      *
      * @param int $vaulted_shopper_id
-     * @return \tdanielcox\Bluesnap\Models\VaultedShopper
+     * @return \davecoffin\Bluesnap\Models\VaultedShopper
      */
     public function addCardToVaultedShopper($vaulted_shopper_id)
     {
@@ -98,7 +98,7 @@ class VaultedShopperController
             ]
         ];
 
-        $response = \tdanielcox\Bluesnap\VaultedShopper::update($vaulted_shopper_id, $vaulted_shopper);
+        $response = \davecoffin\Bluesnap\VaultedShopper::update($vaulted_shopper_id, $vaulted_shopper);
 
         if ($response->failed()) {
             $error = $response->data;

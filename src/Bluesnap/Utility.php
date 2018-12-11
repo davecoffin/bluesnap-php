@@ -1,6 +1,6 @@
 <?php
 
-namespace tdanielcox\Bluesnap;
+namespace davecoffin\Bluesnap;
 
 class Utility
 {
@@ -55,7 +55,7 @@ class Utility
     public static function setupModel($model, $data, $is_collection = false, $target_parameter = null)
     {
         $data = self::objectToArray($data);
-        $class_path = '\tdanielcox\Bluesnap\Models\\'. $model;
+        $class_path = '\davecoffin\Bluesnap\Models\\'. $model;
 
         if ($is_collection)
         {

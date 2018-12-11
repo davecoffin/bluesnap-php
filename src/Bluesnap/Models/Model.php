@@ -1,8 +1,8 @@
 <?php
 
-namespace tdanielcox\Bluesnap\Models;
+namespace davecoffin\Bluesnap\Models;
 
-use tdanielcox\Bluesnap\Utility;
+use davecoffin\Bluesnap\Utility;
 
 class Model
 {
@@ -61,7 +61,7 @@ class Model
 
     private function _parseChild($child, $type)
     {
-        $class_name = '\\tdanielcox\\Bluesnap\\Models\\'. ucfirst($child);
+        $class_name = '\\davecoffin\\Bluesnap\\Models\\'. ucfirst($child);
 
         if ($type === 'collection')
         {

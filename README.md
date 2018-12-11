@@ -25,7 +25,7 @@ This library currently supports:
 Install this package with composer
 
 ```shell
-composer require tdanielcox/bluesnap-php
+composer require davecoffin/bluesnap-php
 ```
 
 ### Usage
@@ -36,7 +36,7 @@ Initialize the library in your class constructor
 public function __construct()
 {
     $environment = 'sandbox'; // or 'production'
-    \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
+    \davecoffin\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
 }
 ```
 
@@ -45,7 +45,7 @@ Create a New Transaction
 ```php
 public function createTransaction()
 {
-    $response = \tdanielcox\Bluesnap\CardTransaction::create([
+    $response = \davecoffin\Bluesnap\CardTransaction::create([
         'creditCard' => [
             'cardNumber' => '4263982640269299',
             'expirationMonth' => '02',
@@ -71,7 +71,7 @@ public function createTransaction()
 }
 ```
 
-#### See [examples](https://github.com/tdanielcox/bluesnap-php/tree/master/examples) for further details on using the library
+#### See [examples](https://github.com/davecoffin/bluesnap-php/tree/master/examples) for further details on using the library
 
 ## License
-This package is licensed under the [MIT License](https://github.com/tdanielcox/bluesnap-php/blob/master/LICENSE)
+This package is licensed under the [MIT License](https://github.com/davecoffin/bluesnap-php/blob/master/LICENSE)

@@ -9,18 +9,18 @@ class ReportController
     public function __construct()
     {
         $environment = 'sandbox'; // or 'production'
-        \tdanielcox\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
+        \davecoffin\Bluesnap\Bluesnap::init($environment, 'YOUR_API_KEY', 'YOUR_API_PASSWORD');
     }
 
     /**
      * Get a Report
      *
-     * @return \tdanielcox\Bluesnap\Models\Report
+     * @return \davecoffin\Bluesnap\Models\Report
      */
     public function getReport()
     {
         // pass query parameters as array
-        $response = \tdanielcox\Bluesnap\Report::get('TransactionDetail', [
+        $response = \davecoffin\Bluesnap\Report::get('TransactionDetail', [
             'period' => 'THIS_MONTH'
         ]);
 

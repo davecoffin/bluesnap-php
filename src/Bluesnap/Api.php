@@ -1,10 +1,10 @@
 <?php
 
-namespace tdanielcox\Bluesnap;
+namespace davecoffin\Bluesnap;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
-use tdanielcox\Bluesnap\Exceptions\MissingFieldsException;
+use davecoffin\Bluesnap\Exceptions\MissingFieldsException;
 
 class Api
 {

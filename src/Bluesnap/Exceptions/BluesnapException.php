@@ -1,9 +1,9 @@
 <?php
 
-namespace tdanielcox\Bluesnap\Exceptions;
+namespace davecoffin\Bluesnap\Exceptions;
 
 use Exception;
-use tdanielcox\Bluesnap\Contracts\ExceptionInterface;
+use davecoffin\Bluesnap\Contracts\ExceptionInterface;
 
 abstract class BluesnapException extends Exception implements ExceptionInterface
 {

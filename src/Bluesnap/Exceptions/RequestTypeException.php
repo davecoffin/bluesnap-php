@@ -1,6 +1,6 @@
 <?php
 
-namespace tdanielcox\Bluesnap\Exceptions;
+namespace davecoffin\Bluesnap\Exceptions;
 
 class RequestTypeException extends BluesnapException
 {
